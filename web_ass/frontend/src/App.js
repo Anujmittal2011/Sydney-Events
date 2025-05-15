@@ -10,7 +10,7 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/events')
+    axios.get('https://sydney-events-xqkr.onrender.com/api/events')
       .then(res => setEvents(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -35,7 +35,7 @@ function App() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/emails', {
+      await axios.post('https://sydney-events-xqkr.onrender.com/api/emails', {
         username,
         email,
         eventId: selectedEvent._id,
